@@ -1,0 +1,143 @@
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ notepad index.html
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git add index.html
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git commit -m "Index file commited by Dev"
+[Dev (root-commit) b80dbc9] Index file commited by Dev
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git log
+commit b80dbc99a3c3e29b5f90d8989c01355ceb494ab9 (HEAD -> Dev)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:21:23 2021 +0530
+
+    Index file commited by Dev
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git checkout Test
+error: pathspec 'Test' did not match any file(s) known to git
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git checkout -b Test
+Switched to a new branch 'Test'
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ notepad demo.js
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git add demo.js
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git commit -m "Demo file commited by Test"
+[Test 47e14df] Demo file commited by Test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo.js
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git status
+On branch Test
+nothing to commit, working tree clean
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git log
+commit 47e14df5630b3032093166f8c1aa1a732b218441 (HEAD -> Test)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:23:28 2021 +0530
+
+    Demo file commited by Test
+
+commit b80dbc99a3c3e29b5f90d8989c01355ceb494ab9 (Dev)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:21:23 2021 +0530
+
+    Index file commited by Dev
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ notepad style.css
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git add style.css
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git commit -m "Style file commited by Test"
+[Test 3867705] Style file commited by Test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 style.css
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git log
+commit 3867705cb3e755adcd2479a58a9f5d22cd44f228 (HEAD -> Test)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:24:46 2021 +0530
+
+    Style file commited by Test
+
+commit 47e14df5630b3032093166f8c1aa1a732b218441
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:23:28 2021 +0530
+
+    Demo file commited by Test
+
+commit b80dbc99a3c3e29b5f90d8989c01355ceb494ab9 (Dev)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:21:23 2021 +0530
+
+    Index file commited by Dev
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Test)
+$ git switch Dev
+Switched to branch 'Dev'
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git merge Test
+Updating b80dbc9..3867705
+Fast-forward
+ demo.js   | 1 +
+ style.css | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 demo.js
+ create mode 100644 style.css
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git log
+commit 3867705cb3e755adcd2479a58a9f5d22cd44f228 (HEAD -> Dev, Test)
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:24:46 2021 +0530
+
+    Style file commited by Test
+
+commit 47e14df5630b3032093166f8c1aa1a732b218441
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:23:28 2021 +0530
+
+    Demo file commited by Test
+
+commit b80dbc99a3c3e29b5f90d8989c01355ceb494ab9
+Author: rushikeshgadkar <gadkarrushikesh90@gmail.com>
+Date:   Sat Jul 24 14:21:23 2021 +0530
+
+    Index file commited by Dev
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git remote add origin https://github.com/RushikeshGadkar906/githubTask.git
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
+$ git push -u origin Dev
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 762 bytes | 254.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/RushikeshGadkar906/githubTask.git
+ * [new branch]      Dev -> Dev
+Branch 'Dev' set up to track remote branch 'Dev' from 'origin'.
+
+user@DESKTOP-UQ1MMK4 MINGW64 /e/githubTask (Dev)
